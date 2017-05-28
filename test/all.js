@@ -8,7 +8,7 @@ describe('HumanPassword test', function () {
 
     describe('generate', function () {
 
-        it('should return 10', function () {
+        it('should be return 10', function () {
             let result = humanPassword({
                 digits: 4,
                 couples: 3
@@ -19,7 +19,7 @@ describe('HumanPassword test', function () {
             assert.equal(true, typeof parseInt(result.substring(6, 10)) === 'number' && result.substring(6, 10).length === 4);
         });
 
-        it('should return error with digits as string', function (done) {
+        it('should be return error with digits as string', function (done) {
             try{
                 humanPassword({
                     digits: 'esdsdsd'
@@ -29,7 +29,7 @@ describe('HumanPassword test', function () {
             }
         });
 
-        it('should return error with couples as string', function (done) {
+        it('should be return error with couples as string', function (done) {
             try{
                 humanPassword({
                     couples: 'hhhhahha'
@@ -39,7 +39,7 @@ describe('HumanPassword test', function () {
             }
         });
 
-        it('should return error with randomUpper as string', function (done) {
+        it('should be return error with randomUpper as string', function (done) {
             try{
                 humanPassword({
                     randomUpper: 'esdsdsd'
@@ -51,4 +51,30 @@ describe('HumanPassword test', function () {
 
     });
 
+    describe('randomNumber', function () {
+        it('should be return 4 digits', function () {
+            let result = humanPassword._randomNumber(4);
+            assert(result.toString().length, 4)
+        });
+
+        it('should be return error with string as param', function (done) {
+            try {
+                humanPassword._randomNumber('4');
+            } catch (e) {
+                done();
+            }
+        });
+    });
+
+    describe('randomBoolean', function () {
+        it('should be type boolean', function () {
+            assert('boolean', typeof humanPassword._randomBoolean());
+        });
+    });
+
+    describe('randomItem', function () {
+        it('should be type boolean', function () {
+            assert(1, humanPassword._randomItem([1]));
+        });
+    });
 });

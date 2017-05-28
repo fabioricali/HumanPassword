@@ -99,3 +99,7 @@ function generate(opt) {
  * @type {generate}
  */
 module.exports = generate;
+
+module.exports._randomNumber = randomNumber;
+module.exports._randomItem = randomItem;
+module.exports._randomBoolean = randomBoolean;
