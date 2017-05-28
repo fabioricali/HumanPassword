@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "description": "Human password generator",
   "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
     "test": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fabioricali/humanpassword.git"
+    "url": "git+https://github.com/fabioricali/HumanPassword.git"
   },
   "keywords": [
     "password",
@@ -17,9 +20,9 @@
     "hash"
   ],
   "bugs": {
-    "url": "https://github.com/fabioricali/humanpassword/issues"
+    "url": "https://github.com/fabioricali/HumanPassword/issues"
   },
-  "homepage": "https://github.com/fabioricali/humanpassword#readme",
+  "homepage": "https://github.com/fabioricali/HumanPassword#readme",
   "author": "Fabio Ricali",
   "license": "GPL-3.0",
   "devDependencies": {
