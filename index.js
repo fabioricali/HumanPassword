@@ -29,6 +29,9 @@ let _opt = {
  * @returns {number}
  */
 function randomNumber(digits = 4) {
+    if (typeof digits !== 'number')
+        throw new Error('digits must be a number');
+
     let zero = '';
     for (let i = 0; i < digits - 1; i++)
         zero += '0';
@@ -42,6 +45,9 @@ function randomNumber(digits = 4) {
  * @returns {*}
  */
 function randomItem(items) {
+    if (typeof items !== 'object')
+        throw new Error('items must be an array');
+
     return items[Math.floor(Math.random() * items.length)];
 }
 
@@ -74,7 +80,10 @@ function generate(opt) {
         throw new Error('randomUpper must be a boolean');
 
     if (typeof _opt.digits !== 'number')
-        throw new Error('digit must be a number');
+        throw new Error('digits must be a number');
+
+    if (typeof _opt.numberPosition !== 'string')
+        throw new Error('numberPosition must be a string ("start" or "end")');
 
     let str = '', consonant, vowel;
 
@@ -94,8 +103,10 @@ function generate(opt) {
     if(_opt.digits > 0) {
         if(_opt.numberPosition === 'end')
             str += randomNumber(_opt.digits);
-        else
+        else if(_opt.numberPosition === 'start')
             str = randomNumber(_opt.digits) + str;
+        else
+            throw new Error('numberPosition can be equal to "start" or "end"');
     }
 
     return str;
