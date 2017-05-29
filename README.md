@@ -1,5 +1,7 @@
-# HumanPassword [![Build Status](https://travis-ci.org/fabioricali/HumanPassword.svg?branch=master)](https://travis-ci.org/fabioricali/HumanPassword) [![Coverage Status](https://coveralls.io/repos/github/fabioricali/HumanPassword/badge.svg?branch=master)](https://coveralls.io/github/fabioricali/HumanPassword?branch=master)
+# HumanPassword
 Simple library to generate a password (string + number) easy to remember.
+
+[![Build Status](https://travis-ci.org/fabioricali/HumanPassword.svg?branch=master)](https://travis-ci.org/fabioricali/HumanPassword) [![Coverage Status](https://coveralls.io/repos/github/fabioricali/HumanPassword/badge.svg?branch=master)](https://coveralls.io/github/fabioricali/HumanPassword?branch=master)
 
 # Installation
 
