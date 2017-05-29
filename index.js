@@ -13,13 +13,14 @@ const assets = {
 
 /**
  * Default option
- * @type {{digits: number, couples: number, randomUpper: boolean}}
+ * @type {{digits: number, couples: number, randomUpper: boolean, numberPosition: string}}
  * @private
  */
 let _opt = {
     digits: 4,
     couples: 4,
-    randomUpper: false
+    randomUpper: false,
+    numberPosition: 'end' // end|start
 };
 
 /**
@@ -90,8 +91,12 @@ function generate(opt) {
         str += consonant + vowel;
     }
 
-    if(_opt.digits > 0)
-        str += randomNumber(_opt.digits);
+    if(_opt.digits > 0) {
+        if(_opt.numberPosition === 'end')
+            str += randomNumber(_opt.digits);
+        else
+            str = randomNumber(_opt.digits) + str;
+    }
 
     return str;
 }
