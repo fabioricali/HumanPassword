@@ -28,9 +28,6 @@ let _opt = {
  * @returns {number}
  */
 function randomNumber(digits = 4) {
-    if (typeof digits !== 'number')
-        throw new Error('digit must be a number');
-
     let zero = '';
     for (let i = 0; i < digits - 1; i++)
         zero += '0';
@@ -75,6 +72,9 @@ function generate(opt) {
     if (typeof _opt.randomUpper !== 'boolean')
         throw new Error('randomUpper must be a boolean');
 
+    if (typeof _opt.digits !== 'number')
+        throw new Error('digit must be a number');
+
     let str = '', consonant, vowel;
 
     for (let i = 0; i < _opt.couples; i++) {
@@ -89,7 +89,9 @@ function generate(opt) {
         }
         str += consonant + vowel;
     }
-    str += randomNumber(_opt.digits);
+
+    if(_opt.digits > 0)
+        str += randomNumber(_opt.digits);
 
     return str;
 }
@@ -100,6 +102,23 @@ function generate(opt) {
  */
 module.exports = generate;
 
+/**
+ * Exports for testing
+ * @type {randomNumber}
+ * @private
+ */
 module.exports._randomNumber = randomNumber;
+
+/**
+ * Exports for testing
+ * @type {randomItem}
+ * @private
+ */
 module.exports._randomItem = randomItem;
+
+/**
+ * Exports for testing
+ * @type {randomBoolean}
+ * @private
+ */
 module.exports._randomBoolean = randomBoolean;
