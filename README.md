@@ -20,12 +20,12 @@ humanPassword();
 
 ### With options
 
-Name | Default | Description
--|-|-
-couples | 3 | `integer`, a couple of consonant + vowel
-digits | 4 | `integer`, a number of digits, if is 0 number will be hidden
-randomUpper | false | `boolean`, random letters uppercase
-numberPosition | end | `string`, number position in string, can be "start", "middle", "end", "random"
+Name | Type | Default | Description
+-|-|-|-
+couples | integer | 3 | Couple of consonant + vowel
+digits | integer | 4 | Number of digits, if is 0 number will be hidden
+randomUpper | boolean | false | Random letters uppercase
+numberPosition | string | end | Number position in string, can be "start", "middle", "end" and "random"
 
 ```javascript
 var humanPassword = require('human-password');
