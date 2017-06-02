@@ -1,6 +1,6 @@
 {
   "name": "human-password",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Human password generator",
   "main": "index.js",
   "directories": {
