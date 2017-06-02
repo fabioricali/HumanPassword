@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - CHANGELOG.md
 - New position "middle" and "random" for numberPosition option
 
+### Changed
+- License
+
 ## [1.0.2] - 2017-05-29
 ### Added
 - CHANGELOG.md

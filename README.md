@@ -3,13 +3,13 @@ Simple library to generate a password (string + number) easy to remember.
 
 [![Build Status](https://travis-ci.org/fabioricali/HumanPassword.svg?branch=master)](https://travis-ci.org/fabioricali/HumanPassword) [![Coverage Status](https://coveralls.io/repos/github/fabioricali/HumanPassword/badge.svg?branch=master)](https://coveralls.io/github/fabioricali/HumanPassword?branch=master)
 
-# Installation
+## Installation
 
 ```javascript
 npm install human-password --save
 ```
 
-# Example
+## Example
 ### Basic
 ```javascript
 var humanPassword = require('human-password');
@@ -52,3 +52,9 @@ humanPassword({
 });
 // => '6539vikohylure'
 ```
+
+## License
+HumanPassword is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+
+## Author
+[Fabio Ricali](http://rica.li)
