@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [1.0.3] - 2017-06-01
 ### Added
 - CHANGELOG.md
-- New position "middle" for numberPosition option
+- New position "middle" and "random" for numberPosition option
 
 ## [1.0.2] - 2017-05-29
 ### Added

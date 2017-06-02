@@ -45,6 +45,16 @@ describe('HumanPassword test', function () {
             assert.equal(true, typeof result.substring(7, 10) === 'string');
         });
 
+        it('should be return 10 with number position random', function () {
+            let result = humanPassword({
+                digits: 4,
+                couples: 3,
+                numberPosition: 'random'
+            });
+            console.log(result);
+            assert.equal(10, result.length);
+        });
+
         it('should be return 6 with digits = 0', function () {
             let result = humanPassword({
                 digits: 0,

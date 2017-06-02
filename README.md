@@ -25,7 +25,7 @@ Name | Default | Description
 couples | 3 | `integer`, a couple of consonant + vowel
 digits | 4 | `integer`, a number of digits, if is 0 number will be hidden
 randomUpper | false | `boolean`, random letters uppercase
-numberPosition | end | `string`, number position in string, can be "start" or "end"
+numberPosition | end | `string`, number position in string, can be "start", "middle", "end", "random"
 
 ```javascript
 var humanPassword = require('human-password');
