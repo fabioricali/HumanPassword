@@ -31,6 +31,20 @@ describe('HumanPassword test', function () {
             assert.equal(true, typeof result.substring(4, 10) === 'string');
         });
 
+        it('should be return 10 with number position middle', function () {
+            let result = humanPassword({
+                digits: 4,
+                couples: 3,
+                numberPosition: 'middle'
+            });
+            console.log(result);
+            console.log(result.substring(3, 7));
+            console.log(result.substring(7, 10));
+            assert.equal(10, result.length);
+            assert.equal(true, typeof parseInt(result.substring(3, 7)) === 'number' && result.substring(3, 7).length === 4);
+            assert.equal(true, typeof result.substring(7, 10) === 'string');
+        });
+
         it('should be return 6 with digits = 0', function () {
             let result = humanPassword({
                 digits: 0,
@@ -83,8 +97,9 @@ describe('HumanPassword test', function () {
         it('should be return error with numberPosition equal different', function (done) {
             try{
                 humanPassword({
-                    numberPosition: 'middle'
+                    numberPosition: 'left'
                 });
+                done('failed');
             }catch(e) {
                 done()
             }

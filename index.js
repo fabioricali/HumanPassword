@@ -20,7 +20,7 @@ let _opt = {
     digits: 4,
     couples: 4,
     randomUpper: false,
-    numberPosition: 'end' // end|start
+    numberPosition: 'end' // start|middle|end
 };
 
 /**
@@ -101,10 +101,14 @@ function generate(opt) {
     }
 
     if(_opt.digits > 0) {
-        if(_opt.numberPosition === 'end')
-            str += randomNumber(_opt.digits);
-        else if(_opt.numberPosition === 'start')
+        if(_opt.numberPosition === 'start')
             str = randomNumber(_opt.digits) + str;
+        else if(_opt.numberPosition === 'middle') {
+            let startPos = Math.round(str.length / 2);
+            let number = randomNumber(_opt.digits).toString();
+            str = [str.slice(0, startPos), number, str.slice(startPos)].join('');
+        }else if(_opt.numberPosition === 'end')
+            str += randomNumber(_opt.digits);
         else
             throw new Error('numberPosition can be equal to "start" or "end"');
     }
